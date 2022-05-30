@@ -118,7 +118,7 @@ double distribucion_uniforme(double menor, double maximo) {
     return menor + (1.0 * (rand() % diferencia_escalada) / escala);
 }
 
-void desordenar_matriz(Matriz* m, int n) {
+void matriz_aleatoria(Matriz* m, int n) {
     // Distribucion aleatoria a partir de
     // Min: -1 / sqrt(n)
     // Max: 1 / sqrt(n)
@@ -131,7 +131,7 @@ void desordenar_matriz(Matriz* m, int n) {
     }
 }
 
-int argmax_matriz(Matriz *m) {
+int maximo_matriz(Matriz *m) {
     // Se espera una matriz de Mx1
     double puntaje_max = 0;
     int max_idx = 0;

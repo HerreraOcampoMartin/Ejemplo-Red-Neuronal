@@ -17,8 +17,8 @@ void imprimir_matriz(Matriz *m);
 Matriz* copiar_matriz(Matriz *m);
 void guardar_matriz(Matriz* m, char* ruta);
 Matriz* cargar_matriz(char* ruta);
-void desordenar_matriz(Matriz* m, int n);
-int argmax_matriz(Matriz* m);
+void matriz_aleatoria(Matriz* m, int n);
+int maximo_matriz(Matriz* m);
 Matriz* aplanar_matriz(Matriz* m, int eje);
 
 #endif //PRIMERAREDNEURONAL_MATRIZ_H
