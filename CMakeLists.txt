@@ -3,4 +3,4 @@ project(PrimeraRedNeuronal C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(PrimeraRedNeuronal main.c AlgebraLineal/Matriz.c AlgebraLineal/Matriz.h AlgebraLineal/OperacionesMatrices.c AlgebraLineal/OperacionesMatrices.h)
+add_executable(PrimeraRedNeuronal main.c AlgebraLineal/Matriz.c AlgebraLineal/Matriz.h AlgebraLineal/OperacionesMatrices.c AlgebraLineal/OperacionesMatrices.h util/Imagen.c util/Imagen.h)
