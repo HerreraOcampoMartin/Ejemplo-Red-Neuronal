@@ -19,7 +19,7 @@ Matriz *sigmoid_derivado(Matriz *m) {
     return mult_simple;
 }
 
-Matriz *sofmax(Matriz *m) {
+Matriz *softmax(Matriz *m) {
     double total = 0;
 
     for (int i = 0; i < m->filas; ++i) {

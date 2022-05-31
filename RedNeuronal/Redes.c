@@ -155,7 +155,7 @@ Matriz *red_predecir(RedNeuronal *red, Matriz *datos) {
     Matriz *salidas_ocultas = aplicar(sigmoide, entradas_ocultas);
     Matriz *entradas_finales = multiplicar(red->pesos_salida, salidas_ocultas);
     Matriz *salidas_finales = aplicar(sigmoide, entradas_finales);
-    Matriz *resultado = sofmax(salidas_finales);
+    Matriz *resultado = softmax(salidas_finales);
 
     return resultado;
 }

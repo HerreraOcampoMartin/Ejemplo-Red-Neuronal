@@ -7,6 +7,6 @@
 
 double sigmoide(double input);
 Matriz *sigmoid_derivado(Matriz *m);
-Matriz *sofmax (Matriz *m)
+Matriz *softmax (Matriz *m);
 
 #endif //PRIMERAREDNEURONAL_ACTIVACIONES_H
