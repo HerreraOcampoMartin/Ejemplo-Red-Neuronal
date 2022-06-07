@@ -15,7 +15,7 @@ Matriz *crear_matriz(int filas, int cols) {
 
     mat->filas = filas;
     mat->cols = cols;
-    mat->valores = (double *) malloc(filas * sizeof (double*));
+    mat->valores = (double **) malloc(filas * sizeof (double*));
 
     if(mat->valores == NULL){
         printf("no hay suficiente memoria.");
@@ -83,7 +83,7 @@ void guardar_matriz(Matriz *m, char *ruta) {
         }
     }
 
-    printf("Matriz guardada en %s\n.", ruta);
+    printf("Matriz guardada en %s.\n", ruta);
     fclose(archivo);
 
 }
@@ -105,7 +105,7 @@ Matriz *cargar_matriz(char *ruta) {
         }
     }
 
-    printf("Matriz cargada exitosamente del archivo %s.", ruta);
+    printf("Matriz cargada exitosamente del archivo %s.\n", ruta);
     fclose(archivo);
 
     return mat;

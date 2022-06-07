@@ -43,7 +43,7 @@ Matriz *sumar(Matriz *m1, Matriz *m2) {
 
 Matriz *restar(Matriz *m1, Matriz *m2) {
     if(verificar_tamano(m1, m2)){
-        Matriz *resultado = crear_matriz(m1->filas, m2->cols);
+        Matriz *resultado = crear_matriz(m1->filas, m1->cols);
 
         for (int i = 0; i < m1->filas; ++i) {
             for (int j = 0; j < m1->cols; ++j) {
@@ -82,8 +82,8 @@ Matriz *multiplicar(Matriz *m1, Matriz *m2) {
 Matriz *aplicar(double (*func)(double), Matriz *m) {
     Matriz *resultado = copiar_matriz(m);
 
-    for (int i = 0; i < m->filas; ++i) {
-        for (int j = 0; j < m->cols; ++j) {
+    for (int i = 0; i < m->filas; i++) {
+        for (int j = 0; j < m->cols; j++) {
             resultado->valores[i][j] = (*func) (m->valores[i][j]);
         }
     }
@@ -118,9 +118,9 @@ Matriz *sumar_escalar(double n, Matriz *m) {
 Matriz *transponer(Matriz *m) {
     Matriz *resultado = crear_matriz(m->cols, m->filas);
 
-    for (int i = 0; i < m->filas; ++i) {
-        for (int j = 0; j < m->cols; ++j) {
-            resultado->valores[i][j] = m->valores[j][i];
+    for (int i = 0; i < m->filas; i++) {
+        for (int j = 0; j < m->cols; j++) {
+            resultado->valores[j][i] = m->valores[i][j];
         }
     }
 

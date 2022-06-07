@@ -22,15 +22,15 @@ Matriz *sigmoid_derivado(Matriz *m) {
 Matriz *softmax(Matriz *m) {
     double total = 0;
 
-    for (int i = 0; i < m->filas; ++i) {
-        for (int j = 0; j < m->cols; ++j) {
+    for (int i = 0; i < m->filas; i++) {
+        for (int j = 0; j < m->cols; j++) {
             total += exp(m->valores[i][j]);
         }
     }
 
     Matriz *mat = crear_matriz(m->filas, m->cols);
-    for (int i = 0; i < mat->filas; ++i) {
-        for (int j = 0; j < mat->cols; ++j) {
+    for (int i = 0; i < mat->filas; i++) {
+        for (int j = 0; j < mat->cols; j++) {
             mat->valores[i][j] = exp(m->valores[i][j]) / total;
         }
     }

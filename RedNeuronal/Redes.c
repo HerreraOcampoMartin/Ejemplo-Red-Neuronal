@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <string.h>
 
 #define __TAM_MAXIMO__ 1000
 
@@ -115,8 +116,8 @@ void entrenar_red(RedNeuronal *red, Matriz *datos_entrada, Matriz *datos_salida)
 }
 
 void entrenar_red_multiples_imgs(RedNeuronal *red, Imagen **imgs, int tamano) {
-    for (int i = 0; i < tamano; ++i) {
-        if(i % 100 == 0) printf("Imagen numero %d\n, i");
+    for (int i = 0; i < tamano; i++) {
+        if(i % 100 == 0) printf("Imagen numero %d\n", i);
 
         Imagen *imagen_actual = imgs[i];
         Matriz *datos_img = aplanar_matriz(imagen_actual->datos, 0); // Aplanar la matriz a vector columna
@@ -138,7 +139,7 @@ Matriz *red_predecir_imagen(RedNeuronal *red, Imagen *img) {
 
 double red_predecir_imgs(RedNeuronal *red, Imagen **imgs, int n) {
     int n_correctos = 0;
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; i++) {
         Matriz *prediccion = red_predecir_imagen(red, imgs[i]);
 
         if(maximo_matriz(prediccion) == imgs[i]->etiqueta){
